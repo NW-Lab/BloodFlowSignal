@@ -6,7 +6,9 @@
     <UseWindowsForms>true</UseWindowsForms>
     <EnableWindowsTargeting>true</EnableWindowsTargeting>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <Nullable>disable</Nullable>
+    <Encoding>utf-8</Encoding>
+    <NoWarn>$(NoWarn);NU1701;CS8632</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>

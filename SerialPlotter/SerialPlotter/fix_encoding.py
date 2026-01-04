@@ -1,4 +1,8 @@
-using System;
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os
+
+content = """using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO.Ports;
@@ -155,9 +159,9 @@ namespace SerialPlotter
         private void InitializePlot()
         {
             plotControl.Plot.Clear();
-            plotControl.Plot.Title("Blood Flow Data");
-            plotControl.Plot.XLabel("Sample");
-            plotControl.Plot.YLabel("Value");
+            plotControl.Plot.Title("血流データ");
+            plotControl.Plot.XLabel("サンプル数");
+            plotControl.Plot.YLabel("値");
             plotControl.Plot.Axes.AutoScale();
             plotControl.Refresh();
         }
@@ -189,8 +193,8 @@ namespace SerialPlotter
 
             try
             {
-                serialPort.PortName = (comboBoxPorts.SelectedItem?.ToString()) ?? "COM1";
-                serialPort.BaudRate = int.Parse((comboBoxBaudRate.SelectedItem?.ToString()) ?? "115200");
+                serialPort.PortName = comboBoxPorts.SelectedItem.ToString() ?? "COM1";
+                serialPort.BaudRate = int.Parse(comboBoxBaudRate.SelectedItem?.ToString() ?? "115200");
                 serialPort.DataBits = 8;
                 serialPort.Parity = Parity.None;
                 serialPort.StopBits = StopBits.One;
@@ -309,9 +313,9 @@ namespace SerialPlotter
                     scatter.LineWidth = 2;
                     scatter.Color = ScottPlot.Color.FromHex("#0066CC");
                     
-                    plotControl.Plot.Title("Blood Flow Data");
-                    plotControl.Plot.XLabel("Sample");
-                    plotControl.Plot.YLabel("Value");
+                    plotControl.Plot.Title("血流データ");
+                    plotControl.Plot.XLabel("サンプル数");
+                    plotControl.Plot.YLabel("値");
                     plotControl.Plot.Axes.AutoScale();
                     
                     plotControl.Refresh();
@@ -327,3 +331,9 @@ namespace SerialPlotter
         }
     }
 }
+"""
+
+with open('MainForm.cs', 'w', encoding='utf-8') as f:
+    f.write(content)
+
+print('MainForm.cs を UTF-8 で保存しました')
