@@ -55,3 +55,33 @@ M5AtomS3とICS-43434マイクは、以下の表と配線図に従ってI2Sイン
 
 [1] M5Stack. (n.d.). *AtomS3*. M5Stack Documentation. Retrieved from https://docs.m5stack.com/en/core/AtomS3
 [2] Adafruit Industries. (n.d.). *Adafruit I2S MEMS Microphone Breakout - ICS-43434*. Retrieved from https://www.adafruit.com/product/6049
+
+
+## 8. 3Dプリント用ケース
+
+血流計測の精度を向上させるため、ICS-43434マイクを皮膚に直接当てるための専用ケースを設計しました。
+
+### ケースの特徴
+
+*   **直接接触型**: マイクの音孔が皮膚に直接当たる構造で、振動を効率的に伝達
+*   **遮音設計**: 周囲の環境音を遮断し、血流音のみを捉える
+*   **持ちやすい形状**: 円筒形の持ち手で安定した測定が可能
+*   **調整可能な設計**: STEP形式ファイルでFusion 360による編集が可能
+
+### CADファイル
+
+`CAD/`ディレクトリに以下のファイルが含まれています：
+
+*   `microphone_case.stl` - 3Dプリント用（ケース本体）
+*   `microphone_case.step` - Fusion 360編集用（ケース本体）
+*   `microphone_lid.stl` - 3Dプリント用（マイク固定蓋）
+*   `microphone_lid.step` - Fusion 360編集用（マイク固定蓋）
+
+詳細な使用方法と設計仕様については、[CAD/README.md](CAD/README.md)を参照してください。
+
+### 3Dプリント推奨設定
+
+*   材質: PLA または ABS
+*   積層ピッチ: 0.2mm
+*   インフィル: 20-30%
+*   プリント方向: 底面を下にして配置
